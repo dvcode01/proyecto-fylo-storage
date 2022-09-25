@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+:root{
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+    --Gradient-1: hsl(6, 100%, 80%);
+    --Gradient-2: hsl(335, 100%, 65%);
+}
+html{
+	box-sizing: border-box;
+	font-size: 62.5%; /*1rem = 10px*/
+}
+*, *::before, *::after{
+	box-sizing: inherit;
+}
+body{
+	font-size: 1.4rem;
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--Very-Dark-Blue);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../assets/png/bg-mobile.png');
+}
+/* ESTILOS GENERALES */
+.container{
+    width: 90%;
+    margin: 12rem auto 0;
+    max-width: 1200px; 
+}
+p{
+    margin: 0;
+}
+.card{
+    padding: 4rem 4rem 3.6rem;
+    background-color: var(--Dark-Blue);
+    border-radius: 1rem;
+}
+/* SECTION 1 */
+.fylo{
+    margin-bottom: 2rem;
+    border-top-right-radius: 10rem;
+}
+.fylo__img{
+    margin-bottom: 3.2rem;
+}
+.fylo__info{
+    display: flex;
+    gap: 1.5rem;
+}
+.fylo__box{
+    display: flex;
+    padding: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: var(--Very-Dark-Blue);
+}
+/* SECTION 2 */
+.storage{
+    padding: 3.2rem 3.2rem 5.5rem 3.2rem;
+    position: relative;
+}
+.storage__description{
+    font-weight: 400;
+    text-align: center;
+    color: var(--Pale-Blue);
+    margin-bottom: 1.5rem;
+}
+.storage__used{
+    font-weight: 700;
+    color: var(--Pale-Blue);
+}
+.storage__progress{
+    width: 100%;
+    height: 2rem;
+    padding: 3px;
+    background-color: var(--Very-Dark-Blue);
+    border-radius: 2.5rem;
+    margin-bottom: 1rem;
+}
+.storage__bar{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    padding: 3px;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 2.5rem;
+    background-image: linear-gradient(to right, var(--Gradient-1), var(--Gradient-2));
+}
+.storage__ball{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.storage__info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.storage__text{
+    font-weight: 700;
+    color: var(--Pale-Blue);
+}
+.storage__box{
+    position: absolute;
+    top: 78%;
+    left: 50%;
+}
+.storage__message{
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 700;
+    border-radius: 1.2rem;
+    position: relative;
+    left: -50%;
+    background-color: white;
+}
+.storage__number{
+    font-size: 4rem;
+    color: var(--Very-Dark-Blue);
+}
+.storage__left{
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    color: var(--Grayish-Blue);
+}
+.storage__triangle{
+    display: none;
+}
+/* FOOTER */
+.attribution { 
+    margin-top: 6rem;
+    color: #fff;
+    font-size: 1.3rem; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+/* MEDIA QUERIE */
+@media (min-width: 768px){
+    body{
+        background-image: url('../assets/png/bg-desktop.png');
+        background-position-y: bottom;
+        background-size: contain;
+    }
+    .container{
+        display: flex;
+        align-items: flex-end;
+        gap: 3rem;
+    }
+    /* SECTION 1 */
+    .fylo{
+        width: 40%;
+        margin-bottom: 0;
+    }
+    /* SECTION 2 */
+    .storage{
+        width: 60%;
+    }
+    .storage__box{
+        top: -30%;
+        left: unset;
+        right: 3.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .storage__message{
+        left: 0;
+        border-bottom-right-radius: 0;
+    }
+    .storage__triangle{
+        display: block;
+        width: 0;
+        height: 0;
+        border-right: 10px solid white;
+        border-top: 10px solid white;
+        border-left: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+    /* FOOTER */
+    .attribution{
+        margin-top: 2rem;
+    }
+}
